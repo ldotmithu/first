@@ -1,0 +1,23 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  URL: https://github.com/ldotmithu/Dataset/raw/main/diabetes.zip
+  local_data_path: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+data_transform:
+  root_dir: artifacts/data_transform
+  data_path: artifacts/data_ingestion/diabetes.csv
+
+model_train:
+  root_dir: artifacts/model_train
+  train_data_path: artifacts/data_transform/train.csv
+  test_data_path: artifacts/data_transform/test.csv
+  model_name: model.joblib  
+
+model_evaluation:
+  root_dir : artifacts/model_evaluation  
+  test_data_path : artifacts/data_transform/test.csv
+  model_path: artifacts/model_train/model.joblib
+  metric_file_name: artifacts/model_evaluation/metric.json
